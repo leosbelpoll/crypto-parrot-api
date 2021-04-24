@@ -1,0 +1,28 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '12'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+notifications:
+  slack: $SLACK_CHANNEL
+  on_success: always
+  on_failure: always
+
+deploy:
+  provide: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: $HEROKU_API_KEY
+  app: crypto-parrot-api
+  on:
+    repo: leosbelpoll/crypto-parrot-api
