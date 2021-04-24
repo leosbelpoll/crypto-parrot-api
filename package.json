@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"All test runned :P\"",
+    "test": "echo \"All test runned :P NOO\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
